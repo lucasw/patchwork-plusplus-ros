@@ -13,7 +13,8 @@ class ParamsHandler {
 public:
     ParamsHandler(std::recursive_mutex& mutex) : mutex_(mutex), czm_changed_(false), topic_changed_(false), czm()  {
         czm.num_zones_ = 4;
-        auto f = boost::bind(&ParamsHandler::reconfigure_callback, this, _1, _2);
+        auto f = boost::bind(&ParamsHandler::reconfigure_callback, this,
+            boost::placeholders::_1, boost::placeholders::_2);
         server_.setCallback(f);
     }
 
