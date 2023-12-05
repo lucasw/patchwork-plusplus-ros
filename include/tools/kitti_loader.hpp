@@ -6,6 +6,7 @@
 #ifndef PATCHWORK_PCD_LOADER_HPP
 #define PATCHWORK_PCD_LOADER_HPP
 
+#include <boost/filesystem.hpp>
 
 class KittiLoader {
 public:
